@@ -1,44 +1,43 @@
 <template>
   <div class="home">
-    <div>
-      <news-media></news-media>
-    </div>
+    <navigation-pager></navigation-pager>
+    <footer>
+      <mt-tabbar :fixed="true">
+        <mt-tab-item>
+          <img slot="icon" src="../img/home.gif">
+          首页
+        </mt-tab-item>
+        <mt-tab-item>
+          <img slot="icon" src="../img/car.gif">
+          购物车
+        </mt-tab-item>
+        <mt-tab-item>
+          <img slot="icon" src="../img/person.gif">
+          个人中心
+        </mt-tab-item>
+      </mt-tabbar>
+    </footer>
   </div>
 </template>
 
 <script>
+import navigationPager from './nav/index'
+
 export default {
   name: 'home',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      tabContainerActive: 'tab-container-home',
+      logintype: false
     }
   },
   methods: {
-    handleClick: function () {
-      this.$toast('Hello world!')
+    linkToPath (path) {
+      this.$router.push({ path: path })
     }
+  },
+  components: {
+    navigationPager: navigationPager
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>
