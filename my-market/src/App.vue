@@ -12,16 +12,23 @@ export default {
 </script>
 
 <style>
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  height:45px;
+  line-height: 50px;
+}
+
 .mint-searchbar{
   background-color: #459ae9;
 }
 
 .mint-searchbar-cancel{
   display: none;
-}
-
-.mint-tabbar > .mint-tab-item.is-selected{
-  background-color: #fff;
 }
 
 html{

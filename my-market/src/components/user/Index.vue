@@ -3,12 +3,12 @@
     <div class="">
       user user user
     </div>
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
   </div>
 </template>
 
 <script>
-import appFooter from '../common/footer.vue'
+// import appFooter from '../common/footer.vue'
 export default {
   name: 'user',
   data () {
@@ -20,10 +20,10 @@ export default {
     linkToPath (path) {
       this.$router.push({ path: path })
     }
-  },
-  components: {
-    appFooter: appFooter
   }
+  // components: {
+  //   appFooter: appFooter
+  // }
 }
 </script>
 <style scoped>

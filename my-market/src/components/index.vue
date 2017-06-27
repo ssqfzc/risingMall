@@ -1,43 +1,38 @@
+<style scoped>
+  .test{
+    width: 100%;
+    height: 300px;
+    background: yellow;
+  }
+</style>
 <template>
   <div class="home">
-    <navigation-pager></navigation-pager>
-    <footer>
-      <mt-tabbar :fixed="true">
-        <mt-tab-item>
-          <img slot="icon" src="../img/home.gif">
-          首页
-        </mt-tab-item>
-        <mt-tab-item>
-          <img slot="icon" src="../img/car.gif">
-          购物车
-        </mt-tab-item>
-        <mt-tab-item>
-          <img slot="icon" src="../img/person.gif">
-          个人中心
-        </mt-tab-item>
-      </mt-tabbar>
-    </footer>
+    <div class="test">
+      <router-view></router-view>
+    </div>
+    <div class="footer">
+      <div class=""><router-link :to='home'>{{this.home}}</router-link></div>
+      <div class=""><router-link :to='shoplist'>{{this.cart}}</router-link></div>
+      <div class=""><router-link :to='user'>{{this.user}}</router-link></div>
+    </div>
   </div>
 </template>
 
 <script>
-import navigationPager from './nav/index'
-
 export default {
   name: 'home',
   data () {
     return {
-      tabContainerActive: 'tab-container-home',
-      logintype: false
+      home: '首页',
+      cart: '购物车',
+      user: '个人中心'
     }
   },
   methods: {
     linkToPath (path) {
+      console.log(path)
       this.$router.push({ path: path })
     }
-  },
-  components: {
-    navigationPager: navigationPager
   }
 }
 </script>
